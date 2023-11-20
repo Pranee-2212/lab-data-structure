@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int num, key, element_found = 0;
+    printf("Enter the number of elements you would like to input: ");
+    scanf("%d", &num);
+    int arr[num];
+    printf("\nEnter all the elements of your choice: ");
+    for (int i = 0; i < num; i++)
+        scanf("%d", &arr[i]);
+    printf("\nEnter the key element that you would like to search: ");
+    scanf("%d", &key);
+    /* Linear search starts */
+    for (int i = 0; i < num; i++) {
+        if (key == arr[i]) {
+            printf("%d is present at position %d.\n", key, i + 1);
+            element_found = 1;
+        }
+    }
+    if (element_found == 0)
+        printf("%d is not present in the array.\n", key);
+    return 0;
+}
